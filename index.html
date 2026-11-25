@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>MyFinance — Keuangan Pribadi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <section id="authScreen" class="auth-screen">
+    <div class="auth-card">
+      <div class="brand-mark">M</div>
+      <p class="eyebrow">PERSONAL FINANCE MANAGER</p>
+      <h1 id="authTitle">Selamat datang kembali</h1>
+      <p class="muted" id="authDescription">Masuk untuk mengelola keuangan pribadimu.</p>
+      <form id="authForm">
+        <label id="passwordLabel" for="passwordInput">Password</label>
+        <input id="passwordInput" type="password" placeholder="Masukkan password" required minlength="4" autocomplete="current-password">
+        <button class="btn primary full" id="authButton" type="submit">Masuk ke MyFinance</button>
+      </form>
+      <p class="auth-note" id="authNote">Akun pribadi • Data tersimpan di browser perangkat ini</p>
+    </div>
+  </section>
+
+  <div id="app" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark small">M</div><div><strong>MyFinance</strong><span>PERSONAL SPACE</span></div></div>
+      <div class="side-label">MENU UTAMA</div>
+      <nav class="nav">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-page="transactions"><span>↕</span> Transaksi</button>
+        <button class="nav-item" data-page="accounts"><span>▣</span> Rekening & Dompet</button>
+        <button class="nav-item" data-page="reports"><span>▥</span> Laporan</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="cycle-mini"><span class="dot"></span><div><small>PERIODE AKTIF</small><strong id="sideCycle">Belum dimulai</strong></div></div>
+        <button class="nav-item" id="backupBtn"><span>⇧</span> Backup data</button>
+        <button class="nav-item" id="restoreBtn"><span>⇩</span> Pulihkan data</button>
+        <input type="file" id="restoreInput" accept="application/json" hidden>
+        <button class="nav-item logout" id="logoutBtn"><span>↪</span> Keluar</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><p class="eyebrow" id="todayLabel">RINGKASAN KEUANGAN</p><h2 id="pageTitle">Dashboard</h2></div>
+        <div class="top-actions"><span class="date-chip" id="todayDate"></span><button class="avatar" title="Akun pribadi">E</button></div>
+      </header>
+
+      <section id="dashboardPage" class="page">
+        <div class="welcome-row">
+          <div><h3>Halo, selamat datang! <span>✦</span></h3><p class="muted">Pantau kondisi keuanganmu dengan lebih teratur.</p></div>
+          <button class="btn primary" data-open-transaction="income">＋ Tambah Pemasukan</button>
+        </div>
+        <div class="period-banner">
+          <div><span class="banner-label">PERIODE KEUANGAN SAAT INI</span><h3 id="periodTitle">Periode belum dimulai</h3><p id="periodDates">Catat pemasukan pertamamu untuk memulai periode 30 hari.</p></div>
+          <div class="period-progress"><div class="progress-head"><span>Progres periode</span><strong id="periodDay">0 / 30 hari</strong></div><div class="progress-track"><div id="periodProgress" class="progress-fill"></div></div><small id="periodRemaining">Periode akan dimulai setelah pemasukan pertama dicatat.</small></div>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total Pemasukan</span><span class="stat-icon green">↗</span></div><h3 id="totalIncome">Rp0</h3><small class="positive">Pemasukan periode ini</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Total Pengeluaran</span><span class="stat-icon red">↘</span></div><h3 id="totalExpense">Rp0</h3><small class="negative">Pengeluaran periode ini</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Sisa Dana</span><span class="stat-icon blue">◈</span></div><h3 id="remainingBalance">Rp0</h3><small class="muted">Saldo awal + pemasukan − pengeluaran</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Total Saldo Akun</span><span class="stat-icon purple">▣</span></div><h3 id="totalAccountBalance">Rp0</h3><small class="muted">Gabungan seluruh rekening</small></article>
+        </div>
+        <div class="dashboard-grid">
+          <section class="panel"><div class="panel-heading"><div><h3>Saldo rekening</h3><p class="muted">Uang yang tersedia di setiap tempat</p></div><button class="text-btn" data-go="accounts">Lihat semua ↗</button></div><div id="accountOverview" class="account-list"></div></section>
+          <section class="panel"><div class="panel-heading"><div><h3>Pengeluaran per kategori</h3><p class="muted">Periode berjalan</p></div><button class="text-btn" data-go="reports">Detail ↗</button></div><div id="categoryOverview" class="category-list"><p class="empty">Belum ada pengeluaran.</p></div></section>
+        </div>
+        <section class="panel recent-panel"><div class="panel-heading"><div><h3>Transaksi terbaru</h3><p class="muted">Aktivitas keuangan terakhir</p></div><button class="text-btn" data-go="transactions">Lihat riwayat ↗</button></div><div id="recentTransactions"></div></section>
+      </section>
+
+      <section id="transactionsPage" class="page hidden">
+        <div class="page-intro"><div><h3>Semua transaksi</h3><p class="muted">Catat dan kelola setiap uang masuk, keluar, maupun transfer.</p></div><div class="button-row"><button class="btn soft" id="printTransactionsBtn">▤ Cetak / PDF</button><button class="btn soft" data-open-transaction="transfer">⇄ Transfer</button><button class="btn primary" data-open-transaction="expense">＋ Tambah Transaksi</button></div></div>
+        <div class="filter-bar"><input id="searchTransactions" placeholder="Cari transaksi atau catatan..."><select id="typeFilter"><option value="all">Semua jenis</option><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option><option value="transfer">Transfer</option></select><select id="periodFilter"><option value="current">Periode aktif</option><option value="all">Semua periode</option></select></div>
+        <div class="panel table-panel"><div id="transactionTable"></div></div>
+      </section>
+
+      <section id="accountsPage" class="page hidden">
+        <div class="page-intro"><div><h3>Rekening & dompet</h3><p class="muted">Kelola saldo BRI, SeaBank, e-wallet, dan uang tunai.</p></div><button class="btn primary" data-open-transaction="transfer">⇄ Transfer saldo</button></div>
+        <div id="accountCards" class="accounts-grid"></div>
+        <div class="info-note">Saldo akun dihitung otomatis dari saldo awal dan seluruh transaksi. Transfer antar-akun hanya memindahkan saldo, bukan pengeluaran.</div>
+      </section>
+
+      <section id="reportsPage" class="page hidden">
+        <div class="page-intro"><div><h3>Laporan keuangan</h3><p class="muted">Lihat pola pemasukan dan pengeluaranmu.</p></div><select id="reportPeriod"><option value="current">Periode aktif</option><option value="all">Semua periode</option></select></div>
+        <div class="stats-grid report-stats"><article class="stat-card"><span>Total pemasukan</span><h3 id="reportIncome">Rp0</h3></article><article class="stat-card"><span>Total pengeluaran</span><h3 id="reportExpense">Rp0</h3></article><article class="stat-card"><span>Selisih</span><h3 id="reportNet">Rp0</h3></article></div>
+        <div class="dashboard-grid"><section class="panel"><div class="panel-heading"><div><h3>Rincian kategori</h3><p class="muted">Pengeluaran berdasarkan kategori</p></div></div><div id="reportCategories" class="category-list"></div></section><section class="panel"><div class="panel-heading"><div><h3>Pengeluaran berdasarkan sumber dana</h3><p class="muted">Dari mana uang digunakan</p></div></div><div id="sourceBreakdown" class="category-list"></div></section></div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Navigasi utama">
+    <button class="mobile-nav-item active" data-page="dashboard"><span class="mobile-nav-icon">▦</span><small>Home</small></button>
+    <button class="mobile-nav-item" data-page="transactions"><span class="mobile-nav-icon">↕</span><small>Transaksi</small></button>
+    <button class="mobile-nav-item" data-page="accounts"><span class="mobile-nav-icon">▣</span><small>Rekening</small></button>
+    <button class="mobile-nav-item" data-page="reports"><span class="mobile-nav-icon">▥</span><small>Laporan</small></button>
+  </nav>
+
+  <div class="modal-backdrop hidden" id="transactionModal">
+    <div class="modal">
+      <div class="modal-head"><div><p class="eyebrow">CATAT AKTIVITAS</p><h3 id="modalTitle">Tambah transaksi</h3></div><button class="icon-btn" id="closeModal">×</button></div>
+      <div class="type-tabs" id="typeTabs"><button data-type="expense" class="selected">Pengeluaran</button><button data-type="income">Pemasukan</button><button data-type="transfer">Transfer</button></div>
+      <form id="transactionForm">
+        <div class="form-grid">
+          <div class="field full"><label for="amount">Nominal (Rp)</label><input id="amount" type="number" min="1" step="1" placeholder="Contoh: 150000" required></div>
+          <div class="field"><label for="transactionDate">Tanggal</label><input id="transactionDate" type="date" required></div>
+          <div class="field" id="accountField"><label for="account">Sumber / rekening</label><select id="account" required></select></div>
+          <div class="field hidden" id="toAccountField"><label for="toAccount">Rekening tujuan</label><select id="toAccount"></select></div>
+          <div class="field" id="categoryField"><label for="category">Kategori pengeluaran</label><select id="category"></select></div>
+          <div class="field full"><label for="description">Nama transaksi / catatan</label><input id="description" placeholder="Contoh: Makan siang, beli skincare..."></div>
+        </div>
+        <p class="form-hint" id="formHint">Pilih rekening yang digunakan untuk membayar transaksi.</p>
+        <div class="modal-actions"><button type="button" class="btn soft" id="cancelModal">Batal</button><button class="btn primary" type="submit">Simpan transaksi</button></div>
+      </form>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

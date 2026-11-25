@@ -1,0 +1,96 @@
+*{box-sizing:border-box} :root{--ink:#172235;--muted:#8490a3;--line:#e9edf3;--bg:#f5f7fb;--navy:#101827;--green:#18a879;--red:#e36d73;--blue:#5489e8;--purple:#8b78df}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:14px}button,input,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}.muted{color:var(--muted)}.eyebrow{font-size:10px;letter-spacing:1.5px;font-weight:700;color:#97a2b3;margin:0 0 7px}.auth-screen{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 15% 15%,#263d5e 0,transparent 34%),#101827}.auth-card{background:white;width:min(420px,100%);padding:42px;border-radius:22px;box-shadow:0 24px 80px #0003}.brand-mark{width:48px;height:48px;border-radius:15px;background:#dff7ed;color:#11996d;display:grid;place-items:center;font:800 25px "Plus Jakarta Sans";margin-bottom:24px}.auth-card h1{font:800 25px "Plus Jakarta Sans";margin:5px 0 8px}.auth-card form{margin-top:28px}.auth-card label,.field label{display:block;font-size:12px;font-weight:700;margin-bottom:8px}.auth-card input,.field input,.field select,.filter-bar input,.filter-bar select{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 13px;background:#fff;outline:none;color:var(--ink)}input:focus,select:focus{border-color:#7ac9ad!important;box-shadow:0 0 0 3px #18a87914}.auth-note{font-size:11px;color:#9aa4b3;text-align:center;margin:18px 0 0}.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:700;font-size:12px;transition:.2s}.btn:hover{transform:translateY(-1px)}.primary{background:#159d72;color:white}.soft{background:#edf2f7;color:#46556b}.full{width:100%;margin-top:15px}.app-shell{min-height:100vh}.sidebar{width:245px;background:var(--navy);color:white;position:fixed;inset:0 auto 0 0;padding:27px 18px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:0 8px 38px}.brand-mark.small{width:37px;height:37px;margin:0;border-radius:11px;font-size:20px}.brand strong{display:block;font:700 15px "Plus Jakarta Sans"}.brand span{display:block;font-size:8px;letter-spacing:1.5px;color:#8190a6;margin-top:4px}.side-label{font-size:9px;letter-spacing:1.4px;color:#728096;font-weight:700;padding:0 12px 12px}.nav{display:grid;gap:5px}.nav-item{border:0;background:transparent;color:#9aa8bc;text-align:left;padding:12px;border-radius:9px;font-size:12px;display:flex;gap:13px;align-items:center}.nav-item span{font-size:17px;width:18px;text-align:center}.nav-item:hover,.nav-item.active{background:#223047;color:white}.nav-item.active{box-shadow:inset 3px 0 #27bd8b}.sidebar-bottom{margin-top:auto;display:grid;gap:5px}.cycle-mini{display:flex;align-items:center;gap:10px;padding:13px 10px;margin-bottom:12px;background:#1a273b;border-radius:10px}.cycle-mini small{display:block;color:#8391a7;font-size:8px;letter-spacing:1px}.cycle-mini strong{font-size:11px;display:block;margin-top:4px}.dot{width:8px;height:8px;border-radius:50%;background:#2cc28d;box-shadow:0 0 0 4px #2cc28d20}.logout{margin-top:4px}.main-content{margin-left:245px;padding:0 38px 50px;max-width:1600px}.topbar{height:94px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);margin-bottom:28px}.topbar h2{font:800 22px "Plus Jakarta Sans";margin:0}.top-actions{display:flex;align-items:center;gap:15px}.date-chip{background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:9px;font-size:11px;color:#66748a}.avatar{width:35px;height:35px;border:0;border-radius:50%;background:#dff7ed;color:#138b68;font-weight:800}.welcome-row,.page-intro{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:21px}.welcome-row h3,.page-intro h3{font:700 18px "Plus Jakarta Sans";margin:0 0 5px}.welcome-row h3 span{color:#e6ad46}.welcome-row p,.page-intro p{margin:0;font-size:12px}.period-banner{background:linear-gradient(110deg,#15243a,#263d5c);border-radius:15px;padding:22px 25px;color:white;display:grid;grid-template-columns:1fr 300px;gap:30px;align-items:center;margin-bottom:19px}.banner-label{font-size:9px;letter-spacing:1.5px;color:#9db0c9;font-weight:700}.period-banner h3{font:700 17px "Plus Jakarta Sans";margin:8px 0 5px}.period-banner p{color:#b5c2d3;font-size:11px;margin:0}.progress-head{display:flex;justify-content:space-between;font-size:10px;color:#b5c2d3;margin-bottom:9px}.progress-head strong{color:white}.progress-track{height:6px;border-radius:8px;background:#ffffff25;overflow:hidden}.progress-fill{height:100%;width:0;background:#35c996;border-radius:8px;transition:width .3s}.period-progress small{display:block;color:#a6b6c9;font-size:9px;margin-top:8px}.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}.stat-card,.panel{background:white;border:1px solid #edf0f5;border-radius:13px;padding:18px}.stat-top{display:flex;justify-content:space-between;align-items:center;color:#788599;font-size:11px}.stat-card h3{font:800 21px "Plus Jakarta Sans";margin:15px 0 8px;letter-spacing:-.5px}.stat-card small{font-size:9px}.positive{color:var(--green)}.negative{color:var(--red)}.stat-icon{width:29px;height:29px;border-radius:9px;display:grid;place-items:center;font-size:15px}.green{background:#e4f8f0;color:#17a779}.red{background:#fff0f0;color:#dc6b70}.blue{background:#edf3ff;color:#5489e8}.purple{background:#f1edff;color:#8b78df}.dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-bottom:17px}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}.panel-heading h3{font:700 13px "Plus Jakarta Sans";margin:0 0 5px}.panel-heading p{font-size:10px;margin:0}.text-btn{border:0;background:none;color:#159d72;font-size:10px;font-weight:700}.account-list,.category-list{display:grid;gap:13px}.account-row{display:flex;align-items:center;gap:11px}.account-icon{width:35px;height:35px;border-radius:10px;background:#f0f4f8;display:grid;place-items:center;font-size:16px}.account-info{flex:1}.account-info strong{display:block;font-size:11px}.account-info small{display:block;color:#98a3b1;font-size:9px;margin-top:3px}.account-amount{font-size:11px;font-weight:700}.category-row{display:grid;grid-template-columns:1fr auto;gap:7px;align-items:center}.category-name{font-size:10px;color:#657287}.category-value{font-size:10px;font-weight:700}.bar-track{grid-column:1/-1;height:5px;background:#f0f2f6;border-radius:5px;overflow:hidden}.bar-fill{height:100%;background:#2ab88b;border-radius:5px}.empty{color:#9aa4b3;font-size:11px;text-align:center;padding:15px}.recent-panel{margin-bottom:20px}.transaction-row{display:grid;grid-template-columns:38px 1fr auto auto;align-items:center;gap:11px;padding:11px 0;border-top:1px solid #f0f2f6}.transaction-row:first-child{border-top:0}.tx-icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#f2f6f8}.tx-main strong{display:block;font-size:10px}.tx-main small{display:block;color:#9aa4b3;font-size:9px;margin-top:4px}.tx-amount{font-size:10px;font-weight:700;white-space:nowrap}.income-text{color:#159d72}.expense-text{color:#dc6b70}.tx-date{font-size:9px;color:#9aa4b3;white-space:nowrap}.button-row{display:flex;gap:8px}.filter-bar{display:flex;gap:10px;margin-bottom:15px}.filter-bar input{flex:1}.filter-bar select,.page-intro select{width:180px;border:1px solid var(--line);border-radius:9px;background:white;padding:11px;color:#657287}.table-panel{overflow:auto}.data-table{width:100%;border-collapse:collapse;min-width:620px}.data-table th{text-align:left;font-size:9px;letter-spacing:.6px;color:#99a3b1;font-weight:700;padding:12px;border-bottom:1px solid var(--line)}.data-table td{padding:13px 12px;border-bottom:1px solid #f0f2f6;font-size:10px}.data-table tr:last-child td{border:0}.pill{display:inline-block;border-radius:20px;padding:5px 8px;background:#edf8f3;color:#159d72;font-size:9px}.pill.expense{background:#fff0f0;color:#d86c71}.pill.transfer{background:#edf3ff;color:#5489e8}.delete-btn{border:0;background:#fff0f0;color:#d86c71;border-radius:7px;padding:6px 8px}.accounts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.account-card{padding:21px;border-radius:14px;background:white;border:1px solid var(--line)}.account-card-top{display:flex;align-items:center;justify-content:space-between}.account-card h4{font-size:12px;margin:14px 0 4px}.account-card .balance{font:800 22px "Plus Jakarta Sans";margin:0}.account-card small{font-size:9px;color:#98a3b1}.account-card .account-icon{width:42px;height:42px}.info-note{padding:14px;background:#edf8f4;border-radius:10px;color:#45866e;font-size:10px;margin-top:17px;line-height:1.6}.report-stats{grid-template-columns:repeat(3,1fr);margin-top:10px}.report-stats .stat-card h3{margin-bottom:0}.modal-backdrop{position:fixed;inset:0;background:#10182788;z-index:20;display:grid;place-items:center;padding:18px}.modal{background:white;width:min(540px,100%);border-radius:17px;padding:24px;max-height:92vh;overflow:auto;box-shadow:0 20px 70px #0003}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal-head h3{font:800 18px "Plus Jakarta Sans";margin:0}.icon-btn{border:0;background:#f1f3f7;border-radius:8px;width:31px;height:31px;font-size:20px;color:#68758a}.type-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:#f1f4f8;padding:4px;border-radius:10px;margin-bottom:20px}.type-tabs button{border:0;background:transparent;padding:9px;border-radius:8px;font-size:10px;color:#7b8798}.type-tabs button.selected{background:white;color:#159d72;font-weight:700;box-shadow:0 2px 7px #14243a12}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field.full{grid-column:1/-1}.field input,.field select{font-size:11px}.form-hint{font-size:10px;color:#8d98a8;background:#f7f9fb;padding:10px;border-radius:8px;margin:15px 0}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#172235;color:white;padding:12px 18px;border-radius:10px;font-size:11px;z-index:50;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:1100px){.main-content{padding:0 24px 40px}.stats-grid{grid-template-columns:repeat(2,1fr)}.period-banner{grid-template-columns:1fr 240px}}@media(max-width:760px){.sidebar{width:66px;padding:20px 8px}.brand{padding:0 6px 30px}.brand>div:last-child,.side-label,.nav-item:not(.active) span,.nav-item{font-size:0}.nav-item{justify-content:center;padding:12px 5px}.nav-item span{font-size:19px}.nav-item.active{font-size:0}.cycle-mini{justify-content:center;padding:12px 4px}.cycle-mini div{display:none}.sidebar-bottom .nav-item{font-size:0}.main-content{margin-left:66px;padding:0 15px 35px}.topbar{height:78px;margin-bottom:20px}.topbar h2{font-size:18px}.date-chip{display:none}.welcome-row,.page-intro{align-items:flex-start;flex-direction:column}.welcome-row .btn,.page-intro>.btn{align-self:stretch}.period-banner{grid-template-columns:1fr;gap:20px;padding:19px}.stats-grid{gap:9px}.stat-card{padding:13px}.stat-card h3{font-size:16px}.stat-top{font-size:9px}.stat-card small{font-size:8px}.dashboard-grid{grid-template-columns:1fr}.accounts-grid{grid-template-columns:1fr}.filter-bar{flex-wrap:wrap}.filter-bar input{flex-basis:100%}.filter-bar select{flex:1;width:auto}.button-row{width:100%}.button-row .btn{flex:1;padding:10px 7px;font-size:10px}.transaction-row{grid-template-columns:34px 1fr auto}.tx-date{display:none}.panel{padding:15px}.report-stats{grid-template-columns:1fr}.auth-card{padding:30px 24px}}
+/* Logo resmi rekening dan e-wallet */
+.account-icon.logo-wrap{background:#fff;border:1px solid #edf0f5;padding:4px;overflow:hidden}
+.account-logo{width:100%;height:100%;object-fit:contain;display:block}
+.account-card .account-icon.logo-wrap{width:54px;height:54px;padding:5px}
+.account-row .account-icon.logo-wrap{width:36px;height:36px;padding:4px}
+@media(max-width:760px){.button-row{flex-wrap:wrap}.button-row .btn{min-width:calc(50% - 5px)}}
+
+/* Responsive navigation: tablet and mobile */
+.mobile-nav{display:none}
+@media (min-width:761px) and (max-width:1024px){
+  .sidebar{width:82px;padding:22px 10px}
+  .brand{justify-content:center;padding:0 0 32px}
+  .brand>div:last-child,.side-label,.cycle-mini div{display:none}
+  .nav-item{justify-content:center;font-size:0;padding:13px 5px}
+  .nav-item span{font-size:19px}
+  .sidebar-bottom .nav-item{font-size:0}
+  .cycle-mini{justify-content:center;padding:12px 4px}
+  .main-content{margin-left:82px;padding:0 22px 42px}
+  .period-banner{grid-template-columns:1fr 230px}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dashboard-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .accounts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  body{padding-bottom:76px}
+  .sidebar{display:none}
+  .main-content{margin-left:0;width:100%;padding:0 14px 28px}
+  .topbar{height:70px;margin-bottom:18px}
+  .topbar h2{font-size:17px}
+  .topbar .eyebrow{font-size:8px}
+  .top-actions{gap:8px}
+  .avatar{width:32px;height:32px}
+  .mobile-nav{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
+    position:fixed;z-index:15;left:10px;right:10px;bottom:10px;
+    padding:8px 7px calc(8px + env(safe-area-inset-bottom));
+    background:rgba(16,24,39,.97);backdrop-filter:blur(14px);
+    border:1px solid #ffffff12;border-radius:17px;
+    box-shadow:0 8px 30px #10182735
+  }
+  .mobile-nav-item{
+    border:0;background:transparent;color:#9aa8bc;border-radius:11px;
+    min-height:48px;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:3px;padding:5px 2px
+  }
+  .mobile-nav-item .mobile-nav-icon{font-size:19px;line-height:1}
+  .mobile-nav-item small{font-size:9px;font-weight:600}
+  .mobile-nav-item.active{background:#223047;color:#46d2a2}
+  .welcome-row{gap:13px}
+  .welcome-row .btn{width:100%}
+  .period-banner{padding:17px;border-radius:13px}
+  .period-banner h3{font-size:15px}
+  .period-banner p{font-size:10px;line-height:1.5}
+  .period-progress small{font-size:8px}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .stat-card{padding:12px;border-radius:11px;min-width:0}
+  .stat-card h3{font-size:clamp(13px,4vw,17px);overflow-wrap:anywhere}
+  .stat-top{font-size:9px;gap:5px}
+  .stat-icon{width:25px;height:25px;flex:0 0 25px}
+  .stat-card small{font-size:8px;line-height:1.4}
+  .dashboard-grid{grid-template-columns:1fr;gap:12px}
+  .panel{padding:14px;border-radius:12px}
+  .panel-heading h3{font-size:12px}
+  .account-row .account-amount{font-size:10px}
+  .page-intro{gap:12px}
+  .page-intro .button-row{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .page-intro .button-row .btn{min-width:0;width:100%;font-size:10px}
+  .page-intro .button-row #printTransactionsBtn{grid-column:1/-1}
+  .filter-bar{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .filter-bar input{grid-column:1/-1;width:100%;min-width:0}
+  .filter-bar select{width:100%;min-width:0;font-size:10px}
+  .accounts-grid{grid-template-columns:1fr;gap:10px}
+  .account-card{padding:16px}
+  .account-card .balance{font-size:19px}
+  .report-stats{grid-template-columns:1fr 1fr}
+  .report-stats .stat-card:last-child{grid-column:1/-1}
+  .page-intro select{width:100%}
+  .modal-backdrop{padding:10px;align-items:end}
+  .modal{width:100%;max-height:90dvh;border-radius:18px 18px 12px 12px;padding:19px}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .field input,.field select{min-height:43px;font-size:13px}
+  .field label{font-size:11px}
+  .modal-actions{position:sticky;bottom:-19px;background:white;padding:12px 0 2px}
+  .modal-actions .btn{flex:1;min-height:42px}
+  .type-tabs button{font-size:10px;padding:11px 5px}
+  .toast{bottom:91px;max-width:calc(100vw - 30px);text-align:center}
+}
+@media (max-width:380px){
+  .main-content{padding-left:10px;padding-right:10px}
+  .stats-grid{gap:7px}
+  .stat-card{padding:10px}
+  .stat-card h3{font-size:13px}
+  .mobile-nav{left:7px;right:7px;bottom:7px}
+}
